@@ -1,5 +1,6 @@
 export default () => {
   const content = document.querySelector(".content");
+
   return fetch("./pages/movies/movies.html")
     .then((response) => response.text())
     .then((moviesHtml) => {
@@ -8,8 +9,8 @@ export default () => {
       const form = document.querySelector("form");
       form.addEventListener("submit", (event) => {
         event.preventDefault();
+
         //const movieUrl = `${window.apiUrl}/api/movie`;
-        let movieUrl = "http://localhost:8080/api/movie";
 
         fetch(movieUrl, {
           method: "POST",
